@@ -5,7 +5,8 @@
 
 /*
  * DeleteFileUI.java
- *
+ *用户界面
+ * 用来提高交互体验，得到用户需要的时间间隔与删除文件的路径
  * Created on 2013-1-21, 10:46:46
  */
 package deleteFileBeta;
@@ -184,12 +185,14 @@ public class DeleteFileUI extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        //初始化对象，接收参数，开始运行线程
         DeleteFileThread deleteFile = new DeleteFileThread(getFilePath(), jTextField2.getText());
         deleteFile.start();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
+        //
         DeleteFileThread deleteFile = new DeleteFileThread(getFilePath(), jTextField2.getText());
         deleteFile.start();
     }//GEN-LAST:event_jTextField1ActionPerformed
@@ -200,6 +203,7 @@ public class DeleteFileUI extends javax.swing.JFrame {
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         // TODO add your handling code here:
+        //弹出窗口，提示使用该程序的方法
         JOptionPane.showMessageDialog(null,"1.先输入删除文件延时时间（单位：秒）" +
                 "\t\n"+"2.再输入删除文件夹的路径，按确定即可");
     }//GEN-LAST:event_jMenuItem3ActionPerformed
@@ -207,6 +211,7 @@ public class DeleteFileUI extends javax.swing.JFrame {
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         try {
             // TODO add your handling code here:
+            //用特定的软件打开output.txt文件
             Runtime.getRuntime().exec("notepad.exe " +".\\output.txt");
         } catch (IOException ex) {
             Logger.getLogger(DeleteFileUI.class.getName()).log(Level.SEVERE, null, ex);
@@ -215,6 +220,7 @@ public class DeleteFileUI extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
+        //显示作者信息
         JOptionPane.showMessageDialog(null,"Author：Spy" +
                 "\t\n"+"Contact：wjj474957860@gmail.com");
     }//GEN-LAST:event_jMenuItem1ActionPerformed
